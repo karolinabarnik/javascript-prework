@@ -32,18 +32,19 @@ printMessage('Twój ruch to: ' + playerMove);
 
 let displayResult(argComputerMove, argPlayerMove) {
     printMessage('Zagrałem' + computerMove + ',a Ty' + playerMove);
-}
-console.log('moves:', argComputerMove, argPlayerMove);
 
-if (argComputerMove === 'kamień' && argPlayerMove === 'papier') ||
-    (argComputerMove === 'nożyce' && argPlayerMove === 'kamień') ||
-    (argComputerMove === 'papier' && argPlayerMove === 'nożyce') || {
-        printMessage('Ty wygrywasz!');
+    console.log('moves:', argComputerMove, argPlayerMove);
+
+    if (argComputerMove === 'kamień' && argPlayerMove === 'papier') ||
+        (argComputerMove === 'nożyce' && argPlayerMove === 'kamień') ||
+        (argComputerMove === 'papier' && argPlayerMove === 'nożyce') || {
+            printMessage('Ty wygrywasz!');
+        }
+    else if (argComputerMove === argPlayerMove) {
+        printMessage('Remis!');
+    } else if (argPlayerMove === 'nieznany ruch') {
+        printMessage('Zagraj jeszcze raz!');
+    } else {
+        printMessage('Ja wygrywam!');
     }
-else if (argComputerMove === argPlayerMove) {
-    printMessage('Remis!');
-} else if (argPlayerMove === 'nieznany ruch') {
-    printMessage('Zagraj jeszcze raz!');
-} else {
-    printMessage('Ja wygrywam!');
 }
