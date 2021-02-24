@@ -7,6 +7,15 @@ function playGame(playerInput) {
     let randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log('Wylosowana liczba to: ' + randomNumber);
 
+    function getMoveName(randomNumber) {
+        if (randomNumber === 1) {
+            return 'kamień';
+        }
+
+        printMessage('Nie znam ruchu o id ' + randomNumber + '.');
+        return 'nieznany ruch';
+    }
+
     let computerMove = getMoveName(randomNumber);
     /*
     if (randomNumber === 1) {
@@ -38,12 +47,11 @@ function playGame(playerInput) {
 
         console.log('moves:', argComputerMove, argPlayerMove);
 
-        if (argComputerMove === 'kamień' && argPlayerMove === 'papier') ||
+        if ((argComputerMove === 'kamień' && argPlayerMove === 'papier') ||
             (argComputerMove === 'nożyce' && argPlayerMove === 'kamień') ||
-            (argComputerMove === 'papier' && argPlayerMove === 'nożyce') || {
-                printMessage('Ty wygrywasz!');
-            }
-        else if (argComputerMove === argPlayerMove) {
+            (argComputerMove === 'papier' && argPlayerMove === 'nożyce')) {
+            printMessage('Ty wygrywasz!');
+        } else if (argComputerMove === argPlayerMove) {
             printMessage('Remis!');
         } else if (argPlayerMove === 'nieznany ruch') {
             printMessage('Zagraj jeszcze raz!');
